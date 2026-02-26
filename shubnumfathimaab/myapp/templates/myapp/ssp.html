@@ -3,50 +3,27 @@
     <title>GST Bill Calculator</title>
 <style>
     body {
-        background-color: lightblue;
+        background: linear-gradient(rgb(253, 26, 26), rgb(255, 255, 57));
         margin: 0;
         padding: 20px;
     }
 
     .box {
-        background-color: white;
+        background-color:whitesmoke;
         padding: 25px;
         width: 300px;
         border-radius: 10px;
         text-align: center;
-        border: 2px solid darkblue;
+        border:3px dotted black;
         margin: 50px auto;
     }
 
-    h2 {
-        color: darkblue;
+    .box1{
         margin-bottom: 5px;
     }
 
-    .student-info {
-        font-size: 14px;
-        margin-bottom: 15px;
-        border-bottom: 1px solid gray;
-        padding-bottom: 8px;
-    }
-
-    .formelt {
-        margin: 8px;
-    }
-
-    input[type="text"] {
-        padding: 5px;
-        width: 80%;
-        border: 1px solid gray;
-    }
-
-    input[type="submit"] {
-        background-color: green;
-        color: white;
-        border: 1px solid black;
-        padding: 6px;
-        width: 85%;
-        cursor: pointer;
+    h3{
+        margin-top:10px
     }
 </style>
 </head>
@@ -54,35 +31,30 @@
 <body>
 
 <div class="box">
-
-    <!-- Added Name and Register Number -->
-    <div class="student-info">
-        <strong>Shubnum Fathima A B</strong><br>
-        Ref No: 25010692
-    </div>
-
+    <p>SHUBNUM FATHIMA AB</p>
+    <P>25010692</P>
+    
     <h2>GST Bill Calculator</h2>
 
     <form method="POST">
         {% csrf_token %}
-
-        <div class="formelt">
-            Price (₹):<br>
+        <div class="box1">
+            Price:<br>
             <input type="text" name="price" value="{{ price }}">
         </div>
 
-        <div class="formelt">
-            GST (%):<br>
+        <div class="box1">
+            GST:<br>
             <input type="text" name="gst" value="{{ gst }}">
         </div>
 
-        <div class="formelt">
+        <div class="box1">
             <input type="submit" value="Calculate">
         </div>
 
-        <div class="formelt">
+        <div class="box1">
             Total Bill:<br>
-            <input type="text" value="{{ total }}" readonly>
+            <input type="text" value="{{ total }}">
         </div>
 
     </form>
